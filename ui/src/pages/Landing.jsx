@@ -8,7 +8,7 @@ const Landing = () => {
   return (
   <section className='max-w-ful my-0'> 
     <div className='font-poppins shadow-lg shadow-black flex justify-center items-center  max-w-[95%] mx-auto'>  
-        <div className='py-2 px-2  bg-gradient-radial-to-brfrom-lime-500 via-transparent to-transparent"
+        <div className='py-2 px-2  bg-gradient-radial-to-br from-lime-500 via-transparent to-transparent"
         grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
             <div className='px-6'>
             <div className='space-x-8 my-4'>
