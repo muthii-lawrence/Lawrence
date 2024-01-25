@@ -3,5 +3,6 @@ import Fstar from "./44start.png";
 import Ffstar from "./4star.png";
 import Skill from "./skill.png";
 import Skillshare from "./Skillshare.png"
+import Html from "./html.png"
 
-export {my_image,Fstar, Ffstar, Skill, Skillshare }
+export {my_image,Fstar, Ffstar, Skill, Skillshare, Html }
