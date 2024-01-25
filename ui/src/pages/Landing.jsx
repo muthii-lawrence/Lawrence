@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Ffstar, Fstar, Html, Skill, Skillshare, my_image } from '../assets';
+import { Ffstar, Fstar, Html, Netflix, Skill, Skillshare, my_image } from '../assets';
 import { GoProjectSymlink } from "react-icons/go";
 import { FaListUl } from "react-icons/fa";
 import { Card } from "antd";
@@ -35,7 +35,6 @@ const Landing = () => {
                 },
             },
         ],
-        
     };
     const data = [
         {
@@ -44,22 +43,22 @@ const Landing = () => {
             spects:`HTML 5, CSS`
         },
         {
-            img: `/images/html.png`,
+            img: `/images/figmaa.png`,
             name:`Dream Wave`,
             spects:`Figma`
         },
         {
-            img: `/images/44start.png`,
+            img: `/images/react.png`,
             name:`Dream Wave`,
             spects:`React js`
         },
         {
-            img: `/images/html.png`,
+            img: `/images/python.png`,
             name:`Dream Wave`,
             spects:`Python`
         },
         {
-            img: `/images/44start.png`,
+            img: `/images/js.png`,
             name:`Dream Wave`,
             spects:`Javascript`
         },
@@ -69,7 +68,7 @@ const Landing = () => {
     <>
   <section className='max-w-ful my-0'> 
     <div className='font-poppins shadow-lg shadow-[#000] flex justify-center items-center  max-w-[98%] mx-auto'>  
-        <div className='py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 bg-gradient-to-tl from-stone-100 via-transparent to-green-300'>
+        <div className='py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 bg-gradient-to-tl from-stone-100 via-transparent to-green-200'>
             <div className='px-6'>
             <div className='space-x-8 my-4'>
                 <h1 className='text-[50px] font-semibold font-poppins text-black '>This is Lawrence. I'm A <br /> 
@@ -113,44 +112,109 @@ const Landing = () => {
         </div>
         </div>
 </section>
-<section>
-    <h1 className='flex justify-center items-center text-[40px] font-bold my-4 px-6 py-4'>Skills</h1>
-    <div className='w-3/4 m-auto'> 
-    <div className='mt-10 mb-14'>
-        <Slider {...settings}>
-        {data.map((d) =>(
-            <Card
-            hoverable
-            className='block rounded-lg shadow-xl shadow-neutral-600 justify-center items-center my-10 px-6 py-4 max-w-1/3 w-full bg-white'>
-                <div className='border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6'>
-                    <img src={Fstar} alt="" className='w-24 my-0'/>
-                </div>
-                <div className="p-6 relative">
-                    <p className='mb-2 text-[25px] font-bold'>{d.name}</p>
-                    <p className='mb-4 text-center font-semibold text-[20px]'>{d.spects}</p>
-                    <div className='absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]'>
-                    <img src={d.img} alt="" className='w-24 mx-auto' /></div>
-                </div>
-            </Card>
-        ))}
-        </Slider>
-    </div>
-
-    </div>
-</section>
-<section>
-<h1 className='flex justify-center items-center text-[40px] font-bold mt-4 px-6 pt-4 pb-0'>Projects</h1>
-    <div className='flex justify-center items-center'>
-    <div className='my-10 m-auto'>
-        <div className='flex flex-cols px-6 py-4 max-w-3/4 w-full h-screen m-auto gap-20 overflow-hidden'>
-            <div className="flex rounded-lg shadow-xl shadow-neutral-600 justify-center items-center w-[430px] h-1/2 bg-white">
-                <h1>Project 1 </h1>            
-            </div>
-            <div className='flex rounded-lg shadow-xl shadow-neutral-600 justify-center items-center w-[430px] h-1/2 bg-white'>
-                <h2>Poject 2</h2>
+<section className=''>
+    <h1 className='flex justify-center items-center text-[40px] font-bold mt-4 px-6 py-4'>Skills</h1>
+    <div className='bg-gradient-to-b from-[#C0F1BF] to-[#ffffff]'>
+        <div className='w-3/4 m-auto'> 
+            <div className='mt-6 mb-14'>
+                <Slider {...settings}>
+                {data.map((d) =>(
+                    <Card
+                    hoverable
+                    className='block rounded-lg shadow-xl shadow-neutral-300 justify-center items-center my-10 px-6 py-4 max-w-1/3 w-full bg-white'>
+                        <div className='border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6'>
+                            <img src={Fstar} alt="" className='w-24 my-0'/>
+                        </div>
+                        <div className="p-6 relative">
+                            <p className='mb-2 text-[25px] font-bold'>{d.name}</p>
+                            <p className='mb-4 text-center font-semibold text-[20px]'>{d.spects}</p>
+                            <div className='absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]'>
+                            <img src={d.img} alt="" className='w-24 mx-auto bg-gray-50' /></div>
+                        </div>
+                    </Card>
+                ))}
+                </Slider>
             </div>
         </div>
     </div>
+</section>
+<section>
+    <div className='my-10'>
+        <h2 className='bg-gradient-to-b from-[#C0F1BF] to-[#ffffff flex justify-center items-center
+             lg:text-[35px] sm:text-[14px] font-bold mt-0 px-6 py-1'>My Services</h2>
+        <div className=''>
+        <div className='w-2/3 m-auto'> 
+            <div className=''></div>
+        <Slider {...settings}>
+          <Card 
+          hoverable
+          className='block rounded-lg shadow-lg shadow-neutral-400 justify-center 
+             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-red-300'>
+                 {/* style={{ height: '250px' }} > */}
+            <div className='relative mb-3 text-center font-semibold text-white'>
+                <h1 className='mb-4 text-[24px] font-bold'>Designing</h1>
+                <p className='text-center font-mediumbold text-[17px]'>User Experience (UX)
+                <p className='text-center font-mediumbold text-[19px]'>User Interface (UI)</p> </p>
+            </div>
+          </Card>
+          <Card 
+          hoverable
+          className='block rounded-lg shadow-lg shadow-neutral-400 justify-center 
+             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-blue-600'>
+            <div>
+                <p className='mb-4 text-center font-semibold text-[18px] text-white '>
+                    Responsive Web Design and Cross-Browser Compatibility:</p>
+            </div>
+          </Card>
+          <Card 
+          hoverable
+          className='block rounded-lg shadow-lg shadow-neutral-400 justify-center 
+             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-gray-300'>
+            <div className='relative mb-3 text-center font-semibold text-white'>
+                <h1 className='mb-4 text-[24px] font-bold'>Optimization and Performance</h1>
+                {/* <p className='text-center font-mediumbold text-[17px]'> */}
+                    {/* Optimizing front-end code and assets to improve website loading times and overall performance.</p> */}
+            </div>
+          </Card>
+          <Card 
+          hoverable
+          className='block rounded-lg shadow-lg shadow-neutral-400 justify-center 
+             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-teal-300'>
+            <div className='relative mb-3 text-center font-semibold text-white'>
+                <h1 className='mb-4 text-[24px] font-bold'>Progressive Web App Development:</h1>
+                {/* <p className='text-center font-mediumbold text-[17px]'>
+                    Building web applications with PWA features like offline support, push notifications, and app-like experiences.</p> */}
+            </div>
+          </Card>
+        </Slider>
+        </div>
+        </div>
+      </div>
+</section>
+
+<section className='bg-gradient-to-br from-white via-green-100 to-white'>
+<h1 className='flex justify-center items-center text-[40px] font-bold mt-4 px-6 pt-4 pb-0'>Projects</h1>
+    <div className='flex justify-center items-center'>
+        <div className='my-10 m-auto'>
+            <div className='flex flex-cols px-6 py-4 max-w-3/4 w-full h-fit m-auto gap-20 overflow-hidden'>
+                <div className="relative w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
+                    <img src={Netflix} alt="" className="w-full h-full object-cover rounded-lg transition-opacity hover:blur-sm"/>
+                    <div className="absolute inset-0 flex rounded-lg items-center justify-center opacity-0 transition-opacity hover:opacity-100">
+                        <button className="text-white text-[16px] font-bold bg-black rounded-full hover:bg-green-300 hover:text-black py-2 px-5">
+                            Project 1
+                        </button>
+                    </div>
+                </div>
+                <div className="relative w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
+                    <img src={Netflix} alt="" className="w-full h-full object-cover rounded-lg transition-opacity hover:blur-sm"/>
+                    <div className="absolute inset-0 flex rounded-lg items-center justify-center opacity-0 transition-opacity hover:opacity-100">
+                        <button className="text-white text-[16px] font-bold bg-black rounded-full hover:bg-green-300 hover:text-black py-2 px-5">
+                            Project 1
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 {/* <section>
