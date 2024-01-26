@@ -5,5 +5,6 @@ import Skill from "./skill.png";
 import Skillshare from "./Skillshare.png";
 import Html from "./html.png";
 import Netflix from "./netflix.jpg";
+import location from './location.png'
 
-export {my_image,Fstar, Ffstar, Skill, Skillshare, Html, Netflix }
+export {my_image,Fstar, Ffstar, Skill, Skillshare, Html, Netflix, location }

@@ -1,327 +1,301 @@
-import React, {useState} from 'react';
-import { Ffstar, Fstar, Html, Netflix, Skill, Skillshare, my_image } from '../assets';
+import React, { useState } from "react";
+import {
+  Ffstar,
+  Fstar,
+  Html,
+  Netflix,
+  Skill,
+  Skillshare,
+  location,
+  my_image,
+} from "../assets";
 import { GoProjectSymlink } from "react-icons/go";
 import { FaListUl } from "react-icons/fa";
 import { Card } from "antd";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
-
-
+import "slick-carousel/slick/slick-theme.css";
 
 const Landing = () => {
-    
-    const settings ={
-        dots: true,
-        infinite:true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [
-            {
-                breakpoint: 680,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    };
-    const data = [
-        {
-            img: `/images/html.png`,
-            name:`Dream Wave`,
-            spects:`HTML 5, CSS`
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 680,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
         },
-        {
-            img: `/images/figmaa.png`,
-            name:`Dream Wave`,
-            spects:`Figma`
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
-        {
-            img: `/images/react.png`,
-            name:`Dream Wave`,
-            spects:`React js`
-        },
-        {
-            img: `/images/python.png`,
-            name:`Dream Wave`,
-            spects:`Python`
-        },
-        {
-            img: `/images/js.png`,
-            name:`Dream Wave`,
-            spects:`Javascript`
-        },
-    ];
+      },
+    ],
+  };
+  const data = [
+    {
+      img: `/images/html.png`,
+      name: `Dream Wave`,
+      spects: `HTML 5, CSS`,
+    },
+    {
+      img: `/images/figmaa.png`,
+      name: `Figma`,
+      spects: `Web, App Design`,
+    },
+    {
+      img: `/images/react.png`,
+      name: `React Js`,
+      spects: `Software Development`,
+    },
+    {
+      img: `/images/python.png`,
+      name: `Dream Wave`,
+      spects: `Python`,
+    },
+    {
+      img: `/images/js.png`,
+      name: `Dream Wave`,
+      spects: `Javascript`,
+    },
+  ];
 
   return (
     <>
-  <section className='max-w-ful my-0'> 
-    <div className='font-poppins shadow-lg shadow-[#000] flex justify-center items-center  max-w-[98%] mx-auto'>  
-        <div className='py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 bg-gradient-to-tl from-stone-100 via-transparent to-green-200'>
-            <div className='px-6'>
-            <div className='space-x-8 my-4'>
-                <h1 className='text-[50px] font-semibold font-poppins text-black '>This is Lawrence. I'm A <br /> 
-                <p className='font-mono bg-[#37b467] px-6 rounded-full w-fit text-[45px] shadow-lg shadow-black text-white font-semibold mt-2'>
-                   Software Engineer</p></h1>
-                <p className='text-xl flex justify-center items-center font-sans my-6 mx-0'> Design and build your website from an experienced developer.
-                 Also if you like any project to do you can contact me. Bring your dream project to live.</p>
-            </div>
-            <div className='space-x-[20%] mt-[40px] relative'>
-                <button className='bg-[#55ce83] font-semibold text-white rounded-full h-11 hover:border-2 hover:border-[#50c473] hover:bg-[white] hover:text-black
-                hover:shadow-[#9ff884] hover:shadow-xl px-4 transition-transform transform hover:rotate-180'> Contact Me</button>
-                <button className='hover:border-[#000000] hover:rounded-none hover:text-[#353175]  h-11 border-2 border-[#61e29b] bg-[white] text-black
-                hover:shadow-[#9ff884] hover:shadow-none font-semibold px-4'>Book an Appointment</button>
-            </div>
-            <div className='flex space-y-0 space-x-[20%] items-baseline my-3 '>
-                <div
-                className=' my-0 w-24'>
-                    <img className='w-24' src={Skillshare} alt="" />
-                    <img src={Fstar} alt="" />
+      <section className="max-w-ful my-0">
+        <div className="font-poppins shadow-lg shadow-[#000] flex justify-center items-center  max-w-[98%] mx-auto">
+          <div className="py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 bg-gradient-to-tl from-stone-100 via-transparent to-green-200">
+            <div className="px-6">
+              <div className="space-x-8 my-4">
+                <h1 className="text-[50px] font-semibold font-poppins text-black ">
+                  This is Lawrence. I'm A <br />
+                  <p className="font-mono bg-[#37b467] px-6 rounded-full w-fit text-[45px] shadow-lg shadow-black text-white font-semibold mt-2">
+                    Software Engineer
+                  </p>
+                </h1>
+                <p className="text-xl flex justify-center items-center font-sans my-6 mx-0">
+                  {" "}
+                  Design and build your website from an experienced developer.
+                  Also if you like any project to do you can contact me. Bring
+                  your dream project to live.
+                </p>
+              </div>
+              <div className="space-x-[20%] mt-[40px] relative">
+                <button
+                  className="bg-[#55ce83] font-semibold text-white rounded-full h-11 hover:border-2 hover:border-[#50c473] hover:bg-[white] hover:text-black
+                hover:shadow-[#9ff884] hover:shadow-xl px-4 transition-transform transform hover:rotate-180"
+                >
+                  {" "}
+                  Contact Me
+                </button>
+                <button
+                  className="hover:border-[#000000] hover:rounded-none hover:text-[#353175]  h-11 border-2 border-[#61e29b] bg-[white] text-black
+                hover:shadow-[#9ff884] hover:shadow-none font-semibold px-4"
+                >
+                  Book an Appointment
+                </button>
+              </div>
+              <div className="flex space-y-0 space-x-[20%] items-baseline my-3 ">
+                <div className=" my-0 w-24">
+                  <img className="w-24" src={Skillshare} alt="" />
+                  <img src={Fstar} alt="" />
                 </div>
-                <div className='w-24'>
-                    <img src={Skill} alt="" />
-                    <img src={Ffstar} alt="" />
+                <div className="w-24">
+                  <img src={Skill} alt="" />
+                  <img src={Ffstar} alt="" />
                 </div>
+              </div>
             </div>
-        </div >
-        <div class='flex flex-col justify-center items-center max-h-3/4 overflow-hidden relative'>
-            <div class='relative'>
-
-                <div className= 'bg-[#95d894] px-3 rounded-full h-11 flex items-center text-xl absolute  bottom-1/4 right-[-4rem] space-x-2'> 
-                    <GoProjectSymlink className='text-white'/>   
-                    <p className='text-black'>100+ completed projects</p>
+            <div class="flex flex-col justify-center items-center max-h-3/4 overflow-hidden relative">
+              <div class="relative">
+                <div className="bg-[#95d894] px-3 rounded-full h-11 flex items-center text-xl absolute  bottom-1/4 right-[-4rem] space-x-2">
+                  <GoProjectSymlink className="text-white" />
+                  <p className="text-black">100+ completed projects</p>
                 </div>
-                <div className='bg-[#abe7aa] px-3 rounded-full h-11 flex items-center text-xl absolute top-1/4 left-[-2rem] space-x-4'>
-                    <FaListUl className='text-white' />
-                    <p classNamme='text-black'>10+ Languages</p>
-                </div >
-                <img class='w-3/4 h-full object-cover rounded-full shadow-2xl shadow-[#78c56d] mx-auto' src={my_image} alt='' />
+                <div className="bg-[#abe7aa] px-3 rounded-full h-11 flex items-center text-xl absolute top-1/4 left-[-2rem] space-x-4">
+                  <FaListUl className="text-white" />
+                  <p classNamme="text-black">10+ Languages</p>
                 </div>
+                <img
+                  class="w-3/4 h-full object-cover rounded-full shadow-2xl shadow-[#78c56d] mx-auto"
+                  src={my_image}
+                  alt=""
+                />
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-</section>
-<section className=''>
-    <h1 className='flex justify-center items-center text-[40px] font-bold mt-4 px-6 py-4'>Skills</h1>
-    <div className='bg-gradient-to-b from-[#C0F1BF] to-[#ffffff]'>
-        <div className='w-3/4 m-auto'> 
-            <div className='mt-6 mb-14'>
-                <Slider {...settings}>
-                {data.map((d) =>(
-                    <Card
+      </section>
+      <section className="">
+        <h1 className="flex justify-center items-center text-[40px] font-bold mt-4 px-6 py-4">
+          Skills
+        </h1>
+        <div className="bg-gradient-to-b from-[#C0F1BF] to-[#ffffff]">
+          <div className="w-3/4 m-auto">
+            <div className="mt-6 mb-14">
+              <Slider {...settings}>
+                {data.map((d) => (
+                  <Card
                     hoverable
-                    className='block rounded-lg shadow-xl shadow-neutral-300 justify-center items-center my-10 px-6 py-4 max-w-1/3 w-full bg-white'>
-                        <div className='border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6'>
-                            <img src={Fstar} alt="" className='w-24 my-0'/>
-                        </div>
-                        <div className="p-6 relative">
-                            <p className='mb-2 text-[25px] font-bold'>{d.name}</p>
-                            <p className='mb-4 text-center font-semibold text-[20px]'>{d.spects}</p>
-                            <div className='absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]'>
-                            <img src={d.img} alt="" className='w-24 mx-auto bg-gray-50' /></div>
-                        </div>
-                    </Card>
+                    className="block rounded-xl shadow-xl shadow-neutral-300 justify-center items-center my-10 px-6 py-4 max-w-1/3 w-full h-fit bg-white"
+                  >
+                    <div className="border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6">
+                      <img src={Fstar} alt="" className="w-24 my-0" />
+                    </div>
+                    <div className="p-6 relative">
+                      <p className="mb-2 text-[20px] font-bold">{d.name}</p>
+                      <p className="mb-4 text-center font-semibold text-[25px]">
+                        {d.spects}
+                      </p>
+                      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]">
+                        <img
+                          src={d.img}
+                          alt=""
+                          className="w-24 mx-auto bg-gray-50"
+                        />
+                      </div>
+                    </div>
+                  </Card>
                 ))}
-                </Slider>
+              </Slider>
             </div>
+          </div>
         </div>
-    </div>
-</section>
-<section>
-    <div className='my-10'>
-        <h2 className='bg-gradient-to-b from-[#C0F1BF] to-[#ffffff flex justify-center items-center
-             lg:text-[35px] sm:text-[14px] font-bold mt-0 px-6 py-1'>My Services</h2>
-        <div className=''>
-        <div className='w-2/3 m-auto'> 
-            <div className=''></div>
-        <Slider {...settings}>
-          <Card 
-          hoverable
-          className='block rounded-lg shadow-lg shadow-neutral-400 justify-center 
-             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-red-300'>
-                 {/* style={{ height: '250px' }} > */}
-            <div className='relative mb-3 text-center font-semibold text-white'>
-                <h1 className='mb-4 text-[24px] font-bold'>Designing</h1>
-                <p className='text-center font-mediumbold text-[17px]'>User Experience (UX)
-                <p className='text-center font-mediumbold text-[19px]'>User Interface (UI)</p> </p>
-            </div>
-          </Card>
-          <Card 
-          hoverable
-          className='block rounded-lg shadow-lg shadow-neutral-400 justify-center 
-             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-blue-600'>
-            <div>
-                <p className='mb-4 text-center font-semibold text-[18px] text-white '>
-                    Responsive Web Design and Cross-Browser Compatibility:</p>
-            </div>
-          </Card>
-          <Card 
-          hoverable
-          className='block rounded-lg shadow-lg shadow-neutral-400 justify-center 
-             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-gray-300'>
-            <div className='relative mb-3 text-center font-semibold text-white'>
-                <h1 className='mb-4 text-[24px] font-bold'>Optimization and Performance</h1>
-                {/* <p className='text-center font-mediumbold text-[17px]'> */}
+      </section>
+      <section>
+        <div className="my-10">
+          <h2
+            className="bg-gradient-to-b from-[#C0F1BF] to-[#ffffff flex justify-center items-center
+             lg:text-[35px] sm:text-[14px] font-bold mt-0 px-6 py-1"
+          >
+            My Services
+          </h2>
+          <div className="">
+            <div className="w-2/3 m-auto">
+              <div className=""></div>
+              <Slider {...settings}>
+                <Card
+                  hoverable
+                  className="block rounded-lg shadow-lg shadow-neutral-400 justify-center 
+             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-red-300"
+                >
+                  {/* style={{ height: '250px' }} > */}
+                  <div className="relative mb-3 text-center font-semibold text-white">
+                    <h1 className="mb-4 text-[24px] font-bold">Designing</h1>
+                    <p className="text-center font-mediumbold text-[17px]">
+                      User Experience (UX)
+                      <p className="text-center font-mediumbold text-[19px]">
+                        User Interface (UI)
+                      </p>{" "}
+                    </p>
+                  </div>
+                </Card>
+                <Card
+                  hoverable
+                  className="block rounded-lg shadow-lg shadow-neutral-400 justify-center 
+             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-blue-600"
+                >
+                  <div>
+                    <p className="mb-4 text-center font-semibold text-[18px] text-white ">
+                      Responsive Web Design and Cross-Browser Compatibility:
+                    </p>
+                  </div>
+                </Card>
+                <Card
+                  hoverable
+                  className="block rounded-lg shadow-lg shadow-neutral-400 justify-center 
+             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-gray-300"
+                >
+                  <div className="relative mb-3 text-center font-semibold text-white">
+                    <h1 className="mb-4 text-[24px] font-bold">
+                      Optimization and Performance
+                    </h1>
+                    {/* <p className='text-center font-mediumbold text-[17px]'> */}
                     {/* Optimizing front-end code and assets to improve website loading times and overall performance.</p> */}
-            </div>
-          </Card>
-          <Card 
-          hoverable
-          className='block rounded-lg shadow-lg shadow-neutral-400 justify-center 
-             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-teal-300'>
-            <div className='relative mb-3 text-center font-semibold text-white'>
-                <h1 className='mb-4 text-[24px] font-bold'>Progressive Web App Development:</h1>
-                {/* <p className='text-center font-mediumbold text-[17px]'>
+                  </div>
+                </Card>
+                <Card
+                  hoverable
+                  className="block rounded-lg shadow-lg shadow-neutral-400 justify-center 
+             items-center my-10 px-6 py-2 max-w-1/3 w-full bg-teal-300"
+                >
+                  <div className="relative mb-3 text-center font-semibold text-white">
+                    <h1 className="mb-4 text-[24px] font-bold">
+                      Progressive Web App Development:
+                    </h1>
+                    {/* <p className='text-center font-mediumbold text-[17px]'>
                     Building web applications with PWA features like offline support, push notifications, and app-like experiences.</p> */}
+                  </div>
+                </Card>
+              </Slider>
             </div>
-          </Card>
-        </Slider>
+          </div>
         </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-white via-green-100 to-white">
+        <h1 className="flex justify-center items-center text-[40px] font-bold mt-4 px-6 pt-4 pb-0">
+          Projects
+        </h1>
+        <div className="flex justify-center items-center">
+          <div className="my-10 m-auto">
+            <div className="flex flex-wrap md:flex-cols px-6 py-4 max-w-3/4 w-full justify-center items-center h-fit m-auto gap-20 overflow-hidden">
+              <div className="relative sm:w-1/2 lg:w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
+                <img
+                  src={Netflix}
+                  alt=""
+                  className="w-full h-full object-cover rounded-lg transition-opacity hover:blur-sm"
+                />
+                <div className="absolute inset-0 flex rounded-lg items-center justify-center opacity-0 transition-opacity hover:opacity-100">
+                  <button className="text-white text-[16px] font-bold bg-black rounded-full hover:bg-green-300 hover:text-black py-2 px-5">
+                    Project 1
+                  </button>
+                </div>
+              </div>
+              <div className="relative sm:w-1/2 lg:w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
+                <img
+                  src={Netflix}
+                  alt=""
+                  className="w-full h-full object-cover rounded-lg transition-opacity hover:blur-sm"
+                />
+                <div className="absolute inset-0 flex rounded-lg items-center justify-center opacity-0 transition-opacity hover:opacity-100">
+                  <button className="text-white text-[16px] font-bold bg-black rounded-full hover:bg-green-300 hover:text-black py-2 px-5">
+                    Project 1
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-</section>
-
-<section className='bg-gradient-to-br from-white via-green-100 to-white'>
-<h1 className='flex justify-center items-center text-[40px] font-bold mt-4 px-6 pt-4 pb-0'>Projects</h1>
-    <div className='flex justify-center items-center'>
-        <div className='my-10 m-auto'>
-            <div className='flex flex-cols px-6 py-4 max-w-3/4 w-full h-fit m-auto gap-20 overflow-hidden'>
-                <div className="relative w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
-                    <img src={Netflix} alt="" className="w-full h-full object-cover rounded-lg transition-opacity hover:blur-sm"/>
-                    <div className="absolute inset-0 flex rounded-lg items-center justify-center opacity-0 transition-opacity hover:opacity-100">
-                        <button className="text-white text-[16px] font-bold bg-black rounded-full hover:bg-green-300 hover:text-black py-2 px-5">
-                            Project 1
-                        </button>
-                    </div>
+      </section>
+      <section>reviews</section>
+      <section>
+        <div className="h-screen">
+          <div className="relative overflow-hidden rounded-lg text-center w-[95%] h-3/4 mx-auto">
+            <img src={location} alt="" className="w-full h-full" />
+            <div className="w-full h-full absolute p-8 top-0">
+              <div className="bg-transparent border-2 border-white bg-black w-full h-full">
+                \
+                <div className="bg-blue-800 rounded w-fit px-4 py-2 -mt-12 ml-6">
+                  <h1 className="text-white text-[20px] ">Tittle</h1>
                 </div>
-                <div className="relative w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
-                    <img src={Netflix} alt="" className="w-full h-full object-cover rounded-lg transition-opacity hover:blur-sm"/>
-                    <div className="absolute inset-0 flex rounded-lg items-center justify-center opacity-0 transition-opacity hover:opacity-100">
-                        <button className="text-white text-[16px] font-bold bg-black rounded-full hover:bg-green-300 hover:text-black py-2 px-5">
-                            Project 1
-                        </button>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
-{/* <section>
-    <h1 className='flex justify-center items-center text-[40px] font-bold my-4 px-6 py-4'>Skills</h1>
-        <div className='flex flex-cols gap-8 max-w-3/4 w-full m-auto h-fit items-center justify-center'>
-        <Slider {...settings}>
-            <div>
-                <Card className="block rounded-lg shadow-xl shadow-neutral-600 justify-center items-center px-6 py-4 max-w-1/3 w-full bg-white">
-
-                    <div className="border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6">
-                        <img className='w-24' src={Ffstar} alt="" />
-                    </div>
-                    <div className="p-6 relative">
-                    <h5 className="mb-2 text-[25px] font-bold">
-                        Dream Wave
-                    </h5>
-                    <p className="mb-4 text-center font-semibold text-[20px]">
-                        HTML 5, CSS
-                    </p>
-                    <div className='absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]'>
-                        <img src={Html} alt="" className="mx-auto" />
-                    </div>
-                    </div>
-                </Card>
-            </div>
-            <div>
-                <Card className="block rounded-lg shadow-xl shadow-neutral-600 justify-center items-center px-6 py-4 max-w-1/3 w-full bg-white">
-
-                    <div className="border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6">
-                        <img className='w-24' src={Fstar} alt="" />
-                    </div>
-                    <div className="p-6 relative">
-                    <h5 className="mb-2 text-[25px] font-bold">
-                        Dream Wave
-                    </h5>
-                    <p className="mb-4 text-center font-semibold text-[20px]">
-                        Figma
-                    </p>
-                    <div className='absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]'>
-                        <img src={Html} alt="" className="mx-auto" />
-                    </div>
-                    </div>
-                </Card>
-            </div>
-            <div>
-                <Card className="block rounded-lg shadow-xl shadow-neutral-600 justify-center items-center px-6 py-4 max-w-1/3 w-full bg-white">
-
-                    <div className="border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6">
-                        <img className='w-24' src={Ffstar} alt="" />
-                    </div>
-                    <div className="p-6 relative">
-                    <h5 className="mb-2 text-[25px] font-bold">
-                        Dream Wave
-                    </h5>
-                    <p className="mb-4 text-center font-semibold text-[20px]">
-                        React Js
-                    </p>
-                    <div className='absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]'>
-                        <img src={Html} alt="" className="mx-auto" />
-                    </div>
-                    </div>
-                </Card>
-            </div>
-            <div>
-                <Card className="block rounded-lg shadow-xl shadow-neutral-600 justify-center items-center px-6 py-4 max-w-1/3 w-full bg-white">
-                    <div className="border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6">
-                        <img className='w-24' src={Ffstar} alt="" />
-                    </div>
-                    <div className="p-6 relative">
-                        <h5 className="mb-2 text-[25px] font-bold">
-                            Dream Wave
-                        </h5>
-                        <p className="mb-4 text-center font-semibold text-[20px]">
-                            HTML 5, CSS
-                        </p>
-                        <div className='absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]'>
-                            <img src={Html} alt="" className="mx-auto" />
-                        </div>
-                    </div>
-                </Card>
-            </div>
-            <div>
-                <Card className="block rounded-lg shadow-xl shadow-neutral-600 justify-center items-center px-6 py-4 max-w-1/3 w-full bg-white">
-                    <div className="border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6">
-                        <img className='w-24' src={Fstar} alt="" />
-                    </div>
-                    <div className="p-6 relative">
-                        <h5 className="mb-2 text-[25px] font-bold">
-                            Dream Wave
-                        </h5>
-                        <p className="mb-4 text-center font-semibold text-[20px]">
-                            HTML 5, CSS
-                        </p>
-                    <div className='absolute left-1/2 transform -translate-x-1/2 bottom-[-5rem]'>
-                        <img src={Html} alt="" className="mx-auto" />
-                    </div>
-                    </div>
-                
-                </Card>        
-                </div>
-                </Slider>
-            </div>            
-</section> */}
-
-</>
-
+      </section>
+    </>
   );
 };
 
-export default Landing
+export default Landing;
