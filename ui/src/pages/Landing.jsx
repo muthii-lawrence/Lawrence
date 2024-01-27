@@ -10,21 +10,25 @@ import {
   my_image,
 } from "../assets";
 import { GoProjectSymlink } from "react-icons/go";
-import { FaListUl } from "react-icons/fa";
 import { Card } from "antd";
 import Slider from "react-slick";
+import { FaListUl } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaLocationDot } from "react-icons/fa6";
 
 const Landing = () => {
   const settings = {
-    dots: true,
+    button: true,
+    gap: "100px",
+    rtl: true,
+    direction: "right",
     infinite: true,
-    speed: 500,
+    speed: 4000,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 800,
     responsive: [
       {
         breakpoint: 680,
@@ -42,6 +46,35 @@ const Landing = () => {
       },
     ],
   };
+  const styles = {
+    dots: true,
+    pasueOnHover: true,
+    showArrows: true,
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    rtl: false,
+    responsive: [
+      {
+        breakpoint: 680,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   const data = [
     {
       img: `/images/html.png`,
@@ -51,12 +84,12 @@ const Landing = () => {
     {
       img: `/images/figmaa.png`,
       name: `Figma`,
-      spects: `Web, App Design`,
+      spects: `Design`,
     },
     {
       img: `/images/react.png`,
       name: `React Js`,
-      spects: `Software Development`,
+      spects: `Development`,
     },
     {
       img: `/images/python.png`,
@@ -69,7 +102,6 @@ const Landing = () => {
       spects: `Javascript`,
     },
   ];
-
   return (
     <>
       <section className="max-w-ful my-0">
@@ -80,7 +112,7 @@ const Landing = () => {
                 <h1 className="text-[50px] font-semibold font-poppins text-black ">
                   This is Lawrence. I'm A <br />
                   <p className="font-mono bg-[#37b467] px-6 rounded-full w-fit text-[45px] shadow-lg shadow-black text-white font-semibold mt-2">
-                    Software Engineer
+                    Front-end Developer
                   </p>
                 </h1>
                 <p className="text-xl flex justify-center items-center font-sans my-6 mx-0">
@@ -152,7 +184,7 @@ const Landing = () => {
                     <div className="border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6">
                       <img src={Fstar} alt="" className="w-24 my-0" />
                     </div>
-                    <div className="p-6 relative">
+                    <div className="p-6 mx-auto relative flex flex-col items-center justify-center">
                       <p className="mb-2 text-[20px] font-bold">{d.name}</p>
                       <p className="mb-4 text-center font-semibold text-[25px]">
                         {d.spects}
@@ -176,23 +208,22 @@ const Landing = () => {
         <div className="my-10">
           <h2
             className="bg-gradient-to-b from-[#C0F1BF] to-[#ffffff flex justify-center items-center
-             lg:text-[35px] sm:text-[14px] font-bold mt-0 px-6 py-1"
+             text-[35px] font-bold mt-6 px-6 py-1"
           >
             My Services
           </h2>
           <div className="">
             <div className="w-2/3 m-auto">
               <div className=""></div>
-              <Slider {...settings}>
+              <Slider {...styles}>
                 <Card
                   hoverable
                   className="block rounded-lg shadow-lg shadow-neutral-400 justify-center 
              items-center my-10 px-6 py-2 max-w-1/3 w-full bg-red-300"
                 >
-                  {/* style={{ height: '250px' }} > */}
                   <div className="relative mb-3 text-center font-semibold text-white">
                     <h1 className="mb-4 text-[24px] font-bold">Designing</h1>
-                    <p className="text-center font-mediumbold text-[17px]">
+                    <p className="text-center font-mediumbold text-[16px]">
                       User Experience (UX)
                       <p className="text-center font-mediumbold text-[19px]">
                         User Interface (UI)
@@ -220,8 +251,6 @@ const Landing = () => {
                     <h1 className="mb-4 text-[24px] font-bold">
                       Optimization and Performance
                     </h1>
-                    {/* <p className='text-center font-mediumbold text-[17px]'> */}
-                    {/* Optimizing front-end code and assets to improve website loading times and overall performance.</p> */}
                   </div>
                 </Card>
                 <Card
@@ -233,8 +262,6 @@ const Landing = () => {
                     <h1 className="mb-4 text-[24px] font-bold">
                       Progressive Web App Development:
                     </h1>
-                    {/* <p className='text-center font-mediumbold text-[17px]'>
-                    Building web applications with PWA features like offline support, push notifications, and app-like experiences.</p> */}
                   </div>
                 </Card>
               </Slider>
@@ -280,18 +307,82 @@ const Landing = () => {
       </section>
       <section>reviews</section>
       <section>
-        <div className="h-screen">
-          <div className="relative overflow-hidden rounded-lg text-center w-[95%] h-3/4 mx-auto">
-            <img src={location} alt="" className="w-full h-full" />
-            <div className="w-full h-full absolute p-8 top-0">
-              <div className="bg-transparent border-2 border-white bg-black w-full h-full">
-                \
-                <div className="bg-blue-800 rounded w-fit px-4 py-2 -mt-12 ml-6">
-                  <h1 className="text-white text-[20px] ">Tittle</h1>
+        <div class="font-medium relative">
+            <div class="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap bg-white">
+              <div class="lg:w-2/3 md:w-1/2 overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative ring-1 ring-slate-900">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  class="absolute inset-0"
+                  frameborder="0"
+                  title="map"
+                  marginheight="0"
+                  marginwidth="0"
+                  scrolling="no"
+                  src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+                  className="filter: grayscale(1) contrast(1.2) opacity(0.4);"
+                ></iframe>
+                <div className="bg-white py-6 rounded lg:h-fit lg:w-1/3 shadow-md font-poppins">
+                  <div className=" h-1/2 px-6 py-6">
+                    <h2 className="text-[16px] font-semibold text-gray-900 tracking-widest">
+                      ADDRESS
+                    </h2>
+                    <p className="mt-1 text-lg text-blue-900 ">
+                      342-01000 Nairobi
+                    </p>
+                  </div>
+                  <div className="lg:w-1/2 px-6 mt-4 py-2 lg:mt-0">
+                    <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs">
+                      EMAIL
+                    </h2>
+                    <a className="text-blue-950 mt-1 leading-relaxed">
+                      murage.lawrence@gmail.com
+                    </a>
+                    <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs mt-4">
+                      PHONE
+                    </h2>
+                    <p className="text-blue-950 py-2 leading-relaxed">
+                      +254795684016
+                    </p>
+                  </div>
                 </div>
               </div>
+              <div className="lg:w-1/3 md:w-1/2 bg-green-50 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 border border-black px-12 hover hover:bg-green-100 py-0">
+                <h2 className="text-gray-900 text-[20px] font-serif mb-4 font-bold flex items-center justify-center">
+                  Get In Touch
+                </h2>
+
+                <div className="relative mb-4">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Full Names"
+                    className="w-full bg-white border outline-none border-gray-600 font-serif text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div className="relative mb-4">
+                  <input
+                    type="text"
+                    id="name"
+                    name="email"
+                    placeholder="Email"
+                    className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div className="relative mb-4">
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Message"
+                    className="w-full bg-white border border-gray-600 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  ></textarea>
+                </div>
+                <button className="text-white font-serif bg-blue-700 border-0 py-2 px-6 w-full mx-auto focus:outline-none hover:bg-blue-900 shadow-lg hover:shadow-blue-700 font-bold text-xl">
+                  Send
+                </button>
+              </div>
             </div>
-          </div>
         </div>
       </section>
     </>
