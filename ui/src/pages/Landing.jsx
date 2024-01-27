@@ -1,21 +1,11 @@
-import React, { useState } from "react";
-import {
-  Ffstar,
-  Fstar,
-  Html,
-  Netflix,
-  Skill,
-  Skillshare,
-  location,
-  my_image,
-} from "../assets";
+import React, { useState, useEffect } from "react";
+import { Ffstar, Fstar, Netflix, Skill, Skillshare, my_image } from "../assets";
 import { GoProjectSymlink } from "react-icons/go";
 import { Card } from "antd";
 import Slider from "react-slick";
 import { FaListUl } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaLocationDot } from "react-icons/fa6";
 
 const Landing = () => {
   const settings = {
@@ -102,11 +92,13 @@ const Landing = () => {
       spects: `Javascript`,
     },
   ];
+
   return (
     <>
       <section className="max-w-ful my-0">
         <div className="font-poppins shadow-lg shadow-[#000] flex justify-center items-center  max-w-[98%] mx-auto">
-          <div className="py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 bg-gradient-to-tl from-stone-100 via-transparent to-green-200">
+          <div className="py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+            {/* bg-gradient-to-tl from-stone-100 via-transparent to-green-200"> */}
             <div className="px-6">
               <div className="space-x-8 my-4">
                 <h1 className="text-[50px] font-semibold font-poppins text-black ">
@@ -134,7 +126,7 @@ const Landing = () => {
                   className="hover:border-[#000000] hover:rounded-none hover:text-[#353175]  h-11 border-2 border-[#61e29b] bg-[white] text-black
                 hover:shadow-[#9ff884] hover:shadow-none font-semibold px-4"
                 >
-                  Book an Appointment
+                  Book an Call
                 </button>
               </div>
               <div className="flex space-y-0 space-x-[20%] items-baseline my-3 ">
@@ -269,7 +261,6 @@ const Landing = () => {
           </div>
         </div>
       </section>
-
       <section className="bg-gradient-to-br from-white via-green-100 to-white">
         <h1 className="flex justify-center items-center text-[40px] font-bold mt-4 px-6 pt-4 pb-0">
           Projects
@@ -305,84 +296,156 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section>reviews</section>
-      <section>
-        <div class="font-medium relative">
-            <div class="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap bg-white">
-              <div class="lg:w-2/3 md:w-1/2 overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative ring-1 ring-slate-900">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  class="absolute inset-0"
-                  frameborder="0"
-                  title="map"
-                  marginheight="0"
-                  marginwidth="0"
-                  scrolling="no"
-                  src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-                  className="filter: grayscale(1) contrast(1.2) opacity(0.4);"
-                ></iframe>
-                <div className="bg-white py-6 rounded lg:h-fit lg:w-1/3 shadow-md font-poppins">
-                  <div className=" h-1/2 px-6 py-6">
-                    <h2 className="text-[16px] font-semibold text-gray-900 tracking-widest">
-                      ADDRESS
-                    </h2>
-                    <p className="mt-1 text-lg text-blue-900 ">
-                      342-01000 Nairobi
-                    </p>
-                  </div>
-                  <div className="lg:w-1/2 px-6 mt-4 py-2 lg:mt-0">
-                    <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs">
-                      EMAIL
-                    </h2>
-                    <a className="text-blue-950 mt-1 leading-relaxed">
-                      murage.lawrence@gmail.com
-                    </a>
-                    <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs mt-4">
-                      PHONE
-                    </h2>
-                    <p className="text-blue-950 py-2 leading-relaxed">
-                      +254795684016
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:w-1/3 md:w-1/2 bg-green-50 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 border border-black px-12 hover hover:bg-green-100 py-0">
-                <h2 className="text-gray-900 text-[20px] font-serif mb-4 font-bold flex items-center justify-center">
-                  Get In Touch
-                </h2>
+      {/* <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->  */}
+      <section class="text-neutral-700 w-3/4 mx-auto px-6 py-4">
+        <div class="mx-auto text-center md:max-w-xl lg:max-w-3xl">
+          <h3 class="mb-6 text-3xl font-bold">Testimonials And Reviews</h3>
+          <p class="mb-6 pb-2 md:mb-12 md:pb-0">
+            What others are saying about my services
+          </p>
+        </div>
 
-                <div className="relative mb-4">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Full Names"
-                    className="w-full bg-white border outline-none border-gray-600 font-serif text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-                <div className="relative mb-4">
-                  <input
-                    type="text"
-                    id="name"
-                    name="email"
-                    placeholder="Email"
-                    className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-                <div className="relative mb-4">
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Message"
-                    className="w-full bg-white border border-gray-600 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                  ></textarea>
-                </div>
-                <button className="text-white font-serif bg-blue-700 border-0 py-2 px-6 w-full mx-auto focus:outline-none hover:bg-blue-900 shadow-lg hover:shadow-blue-700 font-bold text-xl">
-                  Send
-                </button>
+        {/* <!--First Testimonial--> */}
+        <div class="grid gap-6 text-center md:grid-cols-3">
+          <div>
+            <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
+              <div class="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
+              <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
+                <img src="" /> <p className="text-[50px] font-bold">M</p>
+              </div>
+              <div class="p-6">
+                <h4 class="mb-4 text-2xl font-semibold">Murage Lawrence</h4>
+                <hr />
+                <p class="mt-4">
+                  Lorem ipsum dolor sit amet eos adipisci, consectetur
+                  adipisicing elit.
+                </p>
               </div>
             </div>
+          </div>
+
+          {/* <!--Second Testimonial--> */}
+          <div>
+            <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
+              <div class="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
+              <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
+                <img src="" /> <p className="text-[50px] font-bold">M</p>
+              </div>
+              <div class="p-6">
+                <h4 class="mb-4 text-2xl font-semibold">Murage Lawrence</h4>
+                <hr />
+                <p class="mt-4">
+                  Lorem ipsum dolor sit amet eos adipisci, consectetur
+                  adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* <!--Third Testimonial--> */}
+          <div>
+            <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
+              <div class="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
+              <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
+                <img src="" /> <p className="text-[50px] font-bold">M</p>
+              </div>
+              <div class="p-6">
+                <h4 class="mb-4 text-2xl font-semibold">Murage Lawrence</h4>
+                <hr />
+                <p class="mt-4">
+                  Lorem ipsum dolor sit amet eos adipisci, consectetur
+                  adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/review">
+          <button className="flex justify-center items-center right-0 mx-auto mt-6 bg-blue-400 text-white text-[16px] font-bold text-center px-12 py-2">
+            Leave your Review
+          </button>
+        </a>
+      </section>
+      <section>
+        <div class="font-medium relative">
+          <div class="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap bg-white">
+            <div class="lg:w-2/3 md:w-1/2 overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative ring-1 ring-slate-900">
+              <iframe
+                width="100%"
+                height="100%"
+                class="absolute inset-0"
+                frameborder="0"
+                title="map"
+                marginheight="0"
+                marginwidth="0"
+                scrolling="no"
+                src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+                className="filter: grayscale(1) contrast(1.2) opacity(0.4);"
+              ></iframe>
+              <div className="bg-white py-6 rounded lg:h-fit lg:w-1/3 shadow-md font-poppins">
+                <div className=" h-1/2 px-6 py-6">
+                  <h2 className="text-[16px] font-semibold text-gray-900 tracking-widest">
+                    ADDRESS
+                  </h2>
+                  <p className="mt-1 text-lg text-blue-900 ">
+                    342-01000 Nairobi
+                  </p>
+                </div>
+                <div className="lg:w-1/2 px-6 mt-4 py-2 lg:mt-0">
+                  <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs">
+                    EMAIL
+                  </h2>
+                  <a className="text-blue-950 mt-1 leading-relaxed">
+                    murage.lawrence@gmail.com
+                  </a>
+                  <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs mt-4">
+                    PHONE
+                  </h2>
+                  <p className="text-blue-950 py-2 leading-relaxed">
+                    +254795684016
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="lg:w-1/3 md:w-1/2 bg-green-300 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 border border-black px-12 hover hover:bg-green-400 py-0
+              "
+            >
+              <h2 className="text-gray-900 text-[20px] font-serif mb-4 font-bold flex items-center justify-center">
+                Get In Touch
+              </h2>
+
+              <div className="relative mb-4">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Full Names"
+                  className="w-full bg-white border outline-none border-gray-600 font-serif text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+              <div className="relative mb-4">
+                <input
+                  type="text"
+                  id="name"
+                  name="email"
+                  placeholder="Email"
+                  className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+              </div>
+              <div className="relative mb-4">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Message"
+                  className="w-full bg-white border border-gray-600 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                ></textarea>
+              </div>
+              <button className="text-white font-serif bg-blue-700 border-0 py-2 px-6 w-full mx-auto focus:outline-none hover:bg-blue-900 shadow-lg hover:shadow-blue-700 font-bold text-xl">
+                Send
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </>

@@ -7,7 +7,6 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
 
 export const Footer = () => {
   return (
@@ -15,7 +14,7 @@ export const Footer = () => {
       <section>
         <div className="flex flex-col items-center bg-neutral-900 hover:bg-neutral-800 text-center text-white">
           <div className="container px-6 pt-2">
-            <div className="mb-6 flex justify-center">
+            <div className="mb-1 flex justify-center">
               <a
                 href="https://github.com/muthii-lawrence/"
                 className="m-4 h-9 w-9 rounded-full border-2 border-white text-white hover:scale-125"

@@ -4,6 +4,7 @@ import './index.css'
 import { createBrowserRouter,RouterProvider,} from "react-router-dom";
 import RootPage from './pages/Rootpage';
 import Landing from './pages/Landing';
+import { Reviews } from './pages/Reviews';
 // import Skills from './pages/Skills';
 
 
@@ -16,10 +17,10 @@ const router = createBrowserRouter([
       path: "/",
       element: <Landing />
     },
-    // {
-    //   path: "/skills",
-    //   element: <Skills />
-    // },
+    {
+      path: "/reviews",
+      element: <Reviews />
+    },
     ],
   },
 ]);
