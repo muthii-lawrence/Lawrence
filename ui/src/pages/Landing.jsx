@@ -95,15 +95,14 @@ const Landing = () => {
 
   return (
     <>
-      <section className="max-w-ful my-0">
+      <section className="max-w-ful mt-20">
         <div className="font-poppins shadow-lg shadow-[#000] flex justify-center items-center  max-w-[98%] mx-auto">
           <div className="py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-            {/* bg-gradient-to-tl from-stone-100 via-transparent to-green-200"> */}
             <div className="px-6">
-              <div className="space-x-8 my-4">
-                <h1 className="text-[50px] font-semibold font-poppins text-black ">
+              <div className="space-x-8 lg:my-4">
+                <h1 className="md:text-[50px] text-[35px] font-bold font-poppins text-black ">
                   This is Lawrence. I'm A <br />
-                  <p className="font-mono bg-[#37b467] px-6 rounded-full w-fit text-[45px] shadow-lg shadow-black text-white font-semibold mt-2">
+                  <p className="font-mono bg-[#37b467] px-4 rounded-full w-fit lg:text-[45px] py-4 md:py-0 text-[23px] shadow-lg shadow-black text-white font-bold mt-2">
                     Front-end Developer
                   </p>
                 </h1>
@@ -117,14 +116,14 @@ const Landing = () => {
               <div className="space-x-[20%] mt-[40px] relative">
                 <button
                   className="bg-[#55ce83] font-semibold text-white rounded-full h-11 hover:border-2 hover:border-[#50c473] hover:bg-[white] hover:text-black
-                hover:shadow-[#9ff884] hover:shadow-xl px-4 transition-transform transform hover:rotate-180"
+                hover:shadow-[#9ff884] hover:shadow-xl px-4"
                 >
                   {" "}
                   Contact Me
                 </button>
                 <button
                   className="hover:border-[#000000] hover:rounded-none hover:text-[#353175]  h-11 border-2 border-[#61e29b] bg-[white] text-black
-                hover:shadow-[#9ff884] hover:shadow-none font-semibold px-4"
+                hover:shadow-[#000] hover:shadow-xl font-semibold px-4"
                 >
                   Book an Call
                 </button>
@@ -165,7 +164,7 @@ const Landing = () => {
           Skills
         </h1>
         <div className="bg-gradient-to-b from-[#C0F1BF] to-[#ffffff]">
-          <div className="w-3/4 m-auto">
+          <div className="md:w-3/4 m-auto">
             <div className="mt-6 mb-14">
               <Slider {...settings}>
                 {data.map((d) => (
@@ -205,7 +204,7 @@ const Landing = () => {
             My Services
           </h2>
           <div className="">
-            <div className="w-2/3 m-auto">
+            <div className="md:w-2/3  m-auto">
               <div className=""></div>
               <Slider {...styles}>
                 <Card
@@ -296,8 +295,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      {/* <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->  */}
-      <section class="text-neutral-700 w-3/4 mx-auto px-6 py-4">
+      <section class="text-neutral-700 md:w-3/4 mx-auto px-6 py-4">
         <div class="mx-auto text-center md:max-w-xl lg:max-w-3xl">
           <h3 class="mb-6 text-3xl font-bold">Testimonials And Reviews</h3>
           <p class="mb-6 pb-2 md:mb-12 md:pb-0">
@@ -305,12 +303,11 @@ const Landing = () => {
           </p>
         </div>
 
-        {/* <!--First Testimonial--> */}
-        <div class="grid gap-6 text-center md:grid-cols-3">
-          <div>
-            <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
-              <div class="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
-              <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
+        <div class=" gap-10 text-center ">
+          <Slider {...settings}>
+            <div class="block rounded bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
+              <div class="h-20 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
+              <div class="mx-auto -mt-6,,, w-24 overflow-hidden rounded-full border-2 border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-800">
                 <img src="" /> <p className="text-[50px] font-bold">M</p>
               </div>
               <div class="p-6">
@@ -322,10 +319,7 @@ const Landing = () => {
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* <!--Second Testimonial--> */}
-          <div>
             <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
               <div class="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
               <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
@@ -340,10 +334,21 @@ const Landing = () => {
                 </p>
               </div>
             </div>
-          </div>
+            <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
+              <div class="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
+              <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
+                <img src="" /> <p className="text-[50px] font-bold">M</p>
+              </div>
+              <div class="p-6">
+                <h4 class="mb-4 text-2xl font-semibold">Murage Lawrence</h4>
+                <hr />
+                <p class="mt-4">
+                  Lorem ipsum dolor sit amet eos adipisci, consectetur
+                  adipisicing elit.
+                </p>
+              </div>
+            </div>
 
-          {/* <!--Third Testimonial--> */}
-          <div>
             <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
               <div class="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
               <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
@@ -358,9 +363,9 @@ const Landing = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Slider>
         </div>
-        <a href="/review">
+        <a href="/your review">
           <button className="flex justify-center items-center right-0 mx-auto mt-6 bg-blue-400 text-white text-[16px] font-bold text-center px-12 py-2">
             Leave your Review
           </button>
@@ -414,36 +419,45 @@ const Landing = () => {
               <h2 className="text-gray-900 text-[20px] font-serif mb-4 font-bold flex items-center justify-center">
                 Get In Touch
               </h2>
+              <form action="https://api.web3forms.com/submit" method="POST">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="fd5ea484-38d0-4665-b325-0421d096a38b"
+                />
 
-              <div className="relative mb-4">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Full Names"
-                  className="w-full bg-white border outline-none border-gray-600 font-serif text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
-              </div>
-              <div className="relative mb-4">
-                <input
-                  type="text"
-                  id="name"
-                  name="email"
-                  placeholder="Email"
-                  className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                />
-              </div>
-              <div className="relative mb-4">
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Message"
-                  className="w-full bg-white border border-gray-600 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                ></textarea>
-              </div>
-              <button className="text-white font-serif bg-blue-700 border-0 py-2 px-6 w-full mx-auto focus:outline-none hover:bg-blue-900 shadow-lg hover:shadow-blue-700 font-bold text-xl">
-                Send
-              </button>
+                <div className="relative mb-4">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Full Names"
+                    required
+                    className="w-full bg-white border outline-none border-gray-600 font-serif text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div className="relative mb-4">
+                  <input
+                    type="text"
+                    id="name"
+                    name="email"
+                    placeholder="Email"
+                    required
+                    className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div className="relative mb-4">
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Message"
+                    className="w-full bg-white border border-gray-600 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  ></textarea>
+                </div>
+                <button className="text-white font-serif bg-blue-700 border-0 py-2 px-6 w-full mx-auto focus:outline-none hover:bg-blue-900 shadow-lg hover:shadow-blue-700 font-bold text-xl">
+                  Send
+                </button>
+              </form>
             </div>
           </div>
         </div>
