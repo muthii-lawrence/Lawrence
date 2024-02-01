@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Ffstar, Fstar, Netflix, Skill, Skillshare, my_image } from "../assets";
 import { GoProjectSymlink } from "react-icons/go";
 import { Card } from "antd";
@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import { FaListUl } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CountUp from "react-countup";
 
 const Landing = () => {
   const settings = {
@@ -93,32 +94,49 @@ const Landing = () => {
     },
   ];
 
+  // const [isVisible, setIsVisible] = useState(false);
+  // const counterRef = useRef(null);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+  //     const elementOffsetTop = counterRef.current.offsetTop;
+
+  //     if (scrollPosition >= elementOffsetTop - window.innerHeight / 2) {
+  //       setIsVisible(true);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
   return (
     <>
       <section className="max-w-ful mt-20">
-        <div className="font-poppins shadow-lg shadow-[#000] flex justify-center items-center  max-w-[98%] mx-auto">
+        <div className="font-poppins flex justify-center items-center  max-w-[98%] mx-auto">
           <div className="py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <div className="px-6">
               <div className="space-x-8 lg:my-4">
-                <h1 className="md:text-[50px] text-[35px] font-bold font-poppins text-black ">
+                <h1 className="md:text-[45px] text-[27px] font-bold font-poppins text-black ">
                   This is Lawrence. I'm A <br />
-                  <p className="font-mono bg-[#37b467] px-4 rounded-full w-fit lg:text-[45px] py-4 md:py-0 text-[23px] shadow-lg shadow-black text-white font-bold mt-2">
+                  <p className="font-mono bg-[#37b467] px-4 rounded-full w-fit lg:text-[45px] py-2 md:py-0 text-[25px] shadow-lg shadow-black text-white font-bold mt-2">
                     Front-end Developer
                   </p>
                 </h1>
-                <p className="text-xl flex justify-center items-center font-sans my-6 mx-0">
-                  {" "}
+                <p className="md:text-[20px] text-[17px] md:flex md:justify-center ml-0 md:items-center md:font-poppins my-6 mx-0">
                   Design and build your website from an experienced developer.
                   Also if you like any project to do you can contact me. Bring
                   your dream project to live.
                 </p>
               </div>
-              <div className="space-x-[20%] mt-[40px] relative">
+              <div className="md:space-x-[20%] space-x-10 mt-[40px] relative ">
                 <button
                   className="bg-[#55ce83] font-semibold text-white rounded-full h-11 hover:border-2 hover:border-[#50c473] hover:bg-[white] hover:text-black
                 hover:shadow-[#9ff884] hover:shadow-xl px-4"
                 >
-                  {" "}
                   Contact Me
                 </button>
                 <button
@@ -141,11 +159,14 @@ const Landing = () => {
             </div>
             <div class="flex flex-col justify-center items-center max-h-3/4 overflow-hidden relative">
               <div class="relative">
-                <div className="bg-[#95d894] px-3 rounded-full h-11 flex items-center text-xl absolute  bottom-1/4 right-[-4rem] space-x-2">
+                <div className="bg-[#95d894] px-3 rounded-full h-11 flex items-center md:text-xl absolute  md:bottom-1/4 bottom-1/4 md:right-[-4rem] space-x-2">
                   <GoProjectSymlink className="text-white" />
-                  <p className="text-black">100+ completed projects</p>
+
+                  <p className="text-black">
+                    <CountUp end={100} />+ completed projects
+                  </p>
                 </div>
-                <div className="bg-[#abe7aa] px-3 rounded-full h-11 flex items-center text-xl absolute top-1/4 left-[-2rem] space-x-4">
+                <div className="bg-[#abe7aa] px-3 rounded-full h-11 flex items-center md:text-xl absolute md:top-1/4 top-5 md:left-[-2rem] left-0 space-x-4">
                   <FaListUl className="text-white" />
                   <p classNamme="text-black">10+ Languages</p>
                 </div>
@@ -387,7 +408,7 @@ const Landing = () => {
                 src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
                 className="filter: grayscale(1) contrast(1.2) opacity(0.4);"
               ></iframe>
-              <div className="bg-white py-6 rounded lg:h-fit lg:w-1/3 shadow-md font-poppins">
+              <div className="bg-white py-6 rounded lg:h-fit lg:w-1/3 shadow-md font-serif">
                 <div className=" h-1/2 px-6 py-6">
                   <h2 className="text-[16px] font-semibold text-gray-900 tracking-widest">
                     ADDRESS
@@ -400,7 +421,7 @@ const Landing = () => {
                   <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs">
                     EMAIL
                   </h2>
-                  <a className="text-blue-950 mt-1 leading-relaxed">
+                  <a className="text-blue-950 mt-1 leading-relaxed cursor-pointer text-[13px]">
                     murage.lawrence@gmail.com
                   </a>
                   <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs mt-4">
@@ -446,7 +467,7 @@ const Landing = () => {
                     className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
-                <div className="relative mb-4">
+                <div className="relative font-serif mb-4">
                   <textarea
                     id="message"
                     name="message"
