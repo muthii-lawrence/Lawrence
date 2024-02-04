@@ -36,7 +36,7 @@ const Navbar = () => {
           ? "fixed top-0"
           : "absolute"
       }
-     top-0 pb-2 z-10 mx-auto w-full font-poppins flex flex-wrap items-center justify-center bg-[#FBFBFB] text-neutral-500 shadow-lg dark:bg-neutral-600`}
+     top-0 pb-4 z-10 mx-auto w-full font-poppins flex flex-wrap items-center justify-center bg-[#FBFBFB] text-neutral-500 shadow-lg dark:bg-neutral-600`}
     >
       <div class="flex w-full flex-wrap items-center justify-between px-3">
         <div

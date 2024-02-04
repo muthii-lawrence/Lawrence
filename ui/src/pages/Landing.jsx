@@ -95,7 +95,7 @@ const Landing = () => {
 
   return (
     <>
-      <section className="max-w-ful mt-20">
+      <section className="max-w-ful mt-[70px]">
         <div className="font-poppins shadow-lg shadow-[#000] flex justify-center items-center  max-w-[98%] mx-auto">
           <div className="py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <div className="px-6">
@@ -107,7 +107,6 @@ const Landing = () => {
                   </p>
                 </h1>
                 <p className="text-xl flex justify-center items-center font-sans my-6 mx-0">
-                  {" "}
                   Design and build your website from an experienced developer.
                   Also if you like any project to do you can contact me. Bring
                   your dream project to live.
@@ -118,14 +117,13 @@ const Landing = () => {
                   className="bg-[#55ce83] font-semibold text-white rounded-full h-11 hover:border-2 hover:border-[#50c473] hover:bg-[white] hover:text-black
                 hover:shadow-[#9ff884] hover:shadow-xl px-4"
                 >
-                  {" "}
                   Contact Me
                 </button>
                 <button
                   className="hover:border-[#000000] hover:rounded-none hover:text-[#353175]  h-11 border-2 border-[#61e29b] bg-[white] text-black
                 hover:shadow-[#000] hover:shadow-xl font-semibold px-4"
                 >
-                  Book an Call
+                  Book a Call
                 </button>
               </div>
               <div className="flex space-y-0 space-x-[20%] items-baseline my-3 ">
@@ -164,13 +162,13 @@ const Landing = () => {
           Skills
         </h1>
         <div className="bg-gradient-to-b from-[#C0F1BF] to-[#ffffff]">
-          <div className="md:w-3/4 m-auto">
+          <div className="md:w-3/4 w-full overflow-hidden m-auto px-4">
             <div className="mt-6 mb-14">
               <Slider {...settings}>
                 {data.map((d) => (
                   <Card
                     hoverable
-                    className="block rounded-xl shadow-xl shadow-neutral-300 justify-center items-center my-10 px-6 py-4 max-w-1/3 w-full h-fit bg-white"
+                    className="block rounded-xl shadow-xl shadow-neutral-300 justify-center items-center my-10 px-6 py-4 max-w-[full] lg:max-w-1/3 w-full h-fit bg-white"
                   >
                     <div className="border-b-2 mx-auto flex justify-center items-center border-gray-300 py-6">
                       <img src={Fstar} alt="" className="w-24 my-0" />
@@ -204,7 +202,7 @@ const Landing = () => {
             My Services
           </h2>
           <div className="">
-            <div className="md:w-2/3  m-auto">
+            <div className="md:w-3/4 w-full mx-auto px-4">
               <div className=""></div>
               <Slider {...styles}>
                 <Card
@@ -214,7 +212,7 @@ const Landing = () => {
                 >
                   <div className="relative mb-3 text-center font-semibold text-white">
                     <h1 className="mb-4 text-[24px] font-bold">Designing</h1>
-                    <p className="text-center font-mediumbold text-[16px]">
+                    <p className="text-center font-mediumbold text-[17px]">
                       User Experience (UX)
                       <p className="text-center font-mediumbold text-[19px]">
                         User Interface (UI)
@@ -240,7 +238,7 @@ const Landing = () => {
                 >
                   <div className="relative mb-3 text-center font-semibold text-white">
                     <h1 className="mb-4 text-[24px] font-bold">
-                      Optimization and Performance
+                      Optimization <br /> and <br /> Performance
                     </h1>
                   </div>
                 </Card>
@@ -266,7 +264,7 @@ const Landing = () => {
         </h1>
         <div className="flex justify-center items-center">
           <div className="my-10 m-auto">
-            <div className="flex flex-wrap md:flex-cols px-6 py-4 max-w-3/4 w-full justify-center items-center h-fit m-auto gap-20 overflow-hidden">
+            <div className="flex flex-wrap md:flex-cols px-6 py-4 md:max-w-3/4 w-full justify-center items-center h-fit m-auto gap-20 overflow-hidden">
               <div className="relative sm:w-1/2 lg:w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
                 <img
                   src={Netflix}
@@ -295,7 +293,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section class="text-neutral-700 md:w-3/4 mx-auto px-6 py-4">
+      <section class="text-neutral-700 w-full md:w-3/4 mx-auto px-6 py-4">
         <div class="mx-auto text-center md:max-w-xl lg:max-w-3xl">
           <h3 class="mb-6 text-3xl font-bold">Testimonials And Reviews</h3>
           <p class="mb-6 pb-2 md:mb-12 md:pb-0">
@@ -307,7 +305,7 @@ const Landing = () => {
           <Slider {...settings}>
             <div class="block rounded bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
               <div class="h-20 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
-              <div class="mx-auto -mt-6,,, w-24 overflow-hidden rounded-full border-2 border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-800">
+              <div class="mx-auto -mt-6 w-24 overflow-hidden rounded-full border-2 border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-800">
                 <img src="" /> <p className="text-[50px] font-bold">M</p>
               </div>
               <div class="p-6">
