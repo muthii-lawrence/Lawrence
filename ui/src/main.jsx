@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootPage from "./pages/Rootpage";
 import Landing from "./pages/Landing";
 import { Reviews } from "./pages/Reviews";
+import Form from "./pages/Form";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,8 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
-        path: "/your review",
-        element: <Reviews />,
+        path: "/reachout",
+        element: <Form />,
       },
     ],
   },

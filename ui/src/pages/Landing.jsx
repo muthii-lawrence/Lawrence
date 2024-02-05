@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Fstar, Netflix, my_image } from "../assets";
 import { GoProjectSymlink } from "react-icons/go";
-import Slider from "react-slick";
-import { FaListUl } from "react-icons/fa";
+// import Slider from "react-slick";
+import { FaListUl, FaLink } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CountUp from "react-countup";
-import { Tabs, Card } from "antd";
+import { Tabs, Card, Button, Modal } from "antd";
+// import { Form } from "../pages/Form";
 
 const Landing = () => {
   const settings = {
@@ -112,16 +113,26 @@ const Landing = () => {
   //     window.removeEventListener("scroll", handleScroll);
   //   };
   // }, []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   const onChange = (key) => {
     console.log(key);
   };
+
   const items = [
     {
       key: "1",
       label: "Skills",
       children: (
         <>
-          <div className="flex flex-wrap mx-auto">
+          <div className="flex flex-wrap mx-auto items-center">
             <span className="text-[18px] font-bold bg-blue-50 text-blue-600 px-4 rounded mb-4 py-1 border border-blue-500 mx-3">
               HTML5
             </span>
@@ -131,20 +142,18 @@ const Landing = () => {
             <span class="bg-green-50 text-green-600 font-bold mx-3 px-4 py-1 text-[18px] rounded mb-4 border border-green-600">
               React Js
             </span>
-            {/* </div>
-          <div> */}
+
             <span class="bg-yellow-50 text-yellow-600 font-bold mx-3 px-4 py-1  text-[18px] rounded mb-4 border border-yellow-500">
               Javascript
             </span>
             <span class="bg-purple-50 text-purple-600 font-bold mx-3 px-4 py-1  text-[18px] rounded mb-4 border border-purple-600">
               Git
             </span>
-            <span class="bg-pink-50 text-pink-600 font-bold mx-3 px-4 py-1  text-[18px] rounded mb-4 border border-pink-600">
+            <span class="bg-pink-50 text-pink-600 font-bold mx-3 px-4 py-1 text-[18px] rounded border border-pink-600">
               Testing
             </span>
-          </div>
-          <div className="my-2">
-            <span class="bg-indigo-50 text-indigo-600 font-bold mx-3 px-4 py-2  text-[18px] rounded mb-4 border border-indigo-600">
+
+            <span class="bg-indigo-50 text-indigo-600 font-bold mx-3 px-4 py-1 md:py-2  text-[18px] rounded mb-4 border border-indigo-600">
               Responsive Design
             </span>
           </div>
@@ -153,13 +162,139 @@ const Landing = () => {
     },
     {
       key: "2",
-      label: "Services",
-      children: "Content of Tab Pane 2",
+      label: (
+        <>
+          <div onClick={showModal}>Services</div>
+          <Modal
+            title="Some of my services"
+            open={isModalOpen}
+            onCancel={handleCancel}
+            footer={null}
+          >
+            <div className="flex flex-wrap mx-auto items-center">
+              <span class="bg-red-50 text-red-600 font-bold mx-3 px-4 py-1 text-[18px] rounded mb-4 border border-red-600">
+                Consultation and Collaboration
+              </span>
+              <span class="bg-green-50 text-green-600 font-bold mx-3 px-4 py-1 text-[18px] rounded mb-4 border border-green-600">
+                User Experience (UX) Design
+              </span>
+              <span class="bg-indigo-50 text-indigo-600 font-bold mx-3 px-4 py-1 md:py-2  text-[18px] rounded mb-4 border border-indigo-600">
+                Performance Optimization
+              </span>
+              <span class="bg-yellow-50 text-yellow-600 font-bold mx-3 px-4 py-1  text-[18px] rounded mb-4 border border-yellow-500">
+                Web and Application Development
+              </span>
+              <span class="bg-purple-50 text-purple-600 font-bold mx-3 px-4 py-1  text-[18px] rounded mb-4 border border-purple-600">
+                Code Maintenance and Refactoring
+              </span>
+              <span class="bg-pink-50 text-pink-600 font-bold mx-3 px-4 py-1 text-[18px] rounded border border-pink-600">
+                Testing and Debuging
+              </span>
+            </div>
+            <div className="flex items-center justify-center mt-10">
+              <button
+                onClick={() =>
+                  (window.location.href =
+                    "mailto:muthiilawrence124@gmail.com.com")
+                }
+                className="hover:border-[#000000] hover:text-[#353175] py-1 border-2 border-[#000] bg-[white] text-black
+                hover:shadow-[#000] hover:shadow-sm hover:scale-125 text-[18px] font-semibold px-4"
+              >
+                Call To Action
+              </button>
+            </div>
+          </Modal>
+        </>
+      ),
     },
     {
       key: "3",
       label: "Projects",
-      children: "Content of Tab Pane 3",
+      children: (
+        <div>
+          <a
+            onClick={() =>
+              window.open("https://watergift.netlify.app", "_blank")
+            }
+            className="flex m-4 items-center gap-4 text-[18px] text-blue-500 hover:underline focus:outline-none"
+          >
+            <FaLink />
+            <span>Project One</span>
+          </a>
+          <a
+            onClick={() =>
+              window.open("https://watergift.netlify.app", "_blank")
+            }
+            className="flex m-4 items-center gap-4 text-[18px] text-blue-500 hover:underline focus:outline-none"
+          >
+            <FaLink />
+            <span>Project Two</span>
+          </a>
+          <a
+            onClick={() =>
+              window.open("https://watergift.netlify.app", "_blank")
+            }
+            className="flex m-4 items-center gap-4 text-[18px] text-blue-500 hover:underline focus:outline-none"
+          >
+            <FaLink />
+            <span>Project Three</span>
+          </a>
+          <a
+            onClick={() =>
+              window.open("https://watergift.netlify.app", "_blank")
+            }
+            className="flex m-4 items-center gap-4 text-[18px] text-blue-500 hover:underline focus:outline-none"
+          >
+            <FaLink />
+            <span>Project Four</span>
+          </a>
+        </div>
+        // <section className="bg-gradient-to-br from-white via-green-100 to-white">
+        //   <h1 className="flex justify-center items-center text-[40px] font-bold mt-4 px-6 pt-4 pb-0">
+        //     Projects
+        //   </h1>
+        //   <div className="flex justify-center items-center">
+        //     <div className="my-10 m-auto">
+        //       <div className="flex flex-wrap md:flex-cols px-6 py-4 md:max-w-3/4 w-full justify-center items-center h-fit m-auto gap-40 overflow-hidden">
+        //         <div className="relative sm:w-1/2 lg:w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
+        //           <img
+        //             src={Netflix}
+        //             alt=""
+        //             className="w-full h-full object-cover rounded-lg transition-opacity hover:blur-sm"
+        //           />
+        //           <div className="absolute inset-0 flex rounded-lg items-center justify-center opacity-0 transition-opacity hover:opacity-100">
+        //             <button className="text-white text-[16px] font-bold bg-black rounded-full hover:bg-green-300 hover:text-black py-2 px-5">
+        //               Project 1
+        //             </button>
+        //           </div>
+        //         </div>
+        //         <div className="relative sm:w-1/2 lg:w-[430px] h-1/2 overflow-hidden rounded-lg shadow-xl shadow-neutral-600 transition-opacity hover:blur-lg">
+        //           <img
+        //             src={Netflix}
+        //             alt=""
+        //             className="w-full h-full object-cover rounded-lg transition-opacity hover:blur-sm"
+        //           />
+        //           <div className="absolute inset-0 flex rounded-lg items-center justify-center opacity-0 transition-opacity hover:opacity-100">
+        //             <button className="text-white text-[16px] font-bold bg-black rounded-full hover:bg-green-300 hover:text-black py-2 px-5">
+        //               Project 1
+        //             </button>
+        //           </div>
+        //         </div>
+        //       </div>
+        //     </div>
+        //   </div>
+        // </section>
+      ),
+    },
+    {
+      key: "4",
+      label: "Pricing",
+      children: "",
+    },
+    {
+      key: "5",
+      label: "Contact",
+      children: "",
     },
   ];
 
@@ -180,15 +315,16 @@ const Landing = () => {
                   Turning ideas into real life projects is my calling.
                 </p>
               </div>
-              <div className=" my-[40px] md:ml-40 items-center justify-center md:justify-normal mx-auto flex ">
-                <button
-                  className="hover:border-[#000000] hover:text-[#353175]  h-11 border-2 border-[#000] bg-[white] text-black
+              
+                <div className=" my-[40px] md:ml-40 items-center justify-center md:justify-normal mx-auto flex ">
+                  <button
+                    className="hover:border-[#000000] hover:text-[#353175]  h-11 border-2 border-[#000] bg-[white] text-black
                 hover:shadow-[#000] hover:shadow-sm hover:scale-125 text-[18px] font-semibold px-4"
-                >
-                  Reach Out
-                </button>
-              </div>
-
+                  >
+                    Reach Out
+                  </button>
+                </div>
+             
               <div className="mt-10">
                 <Tabs
                   defaultActiveKey="1"
@@ -220,8 +356,57 @@ const Landing = () => {
             </div>
           </div>
         </div>
+        {/* <div className="flex flex-col items-center bg-neutral-900 hover:bg-neutral-800 text-center text-white">
+          <div className="container px-6 pt-2">
+            <div className="mb-1 flex justify-center">
+              <a
+                href="https://github.com/muthii-lawrence/"
+                className="m-4 h-9 w-9 rounded-full border-2 border-white text-white hover:scale-125"
+              >
+                <FaGithub className="mx-auto h-full w-4" fill="currentColor" />
+              </a>
+
+              <a
+                href="/"
+                className="m-4 h-9 w-9 rounded-full border-2 border-white text-white hover:scale-125"
+              >
+                <FaXTwitter
+                  className="mx-auto h-full w-4"
+                  fill="currentColor"
+                />
+              </a>
+              <a
+                href="/"
+                className="m-4 h-9 w-9 rounded-full border-2 border-white text-white hover:scale-125"
+              >
+                <FaInstagram
+                  className="mx-auto h-full w-4"
+                  fill="currentColor"
+                />
+              </a>
+              <a
+                href="/"
+                className="m-4 h-9 w-9 rounded-full border-2 border-white text-white hover:scale-125"
+              >
+                <FaLinkedinIn
+                  className="mx-auto h-full w-4"
+                  fill="currentColor"
+                />
+              </a>
+              <a
+                href="/"
+                className="m-4 h-9 w-9 rounded-full border-2 border-white text-white hover:scale-125"
+              >
+                <FaWhatsapp
+                  className="mx-auto h-full w-4"
+                  fill="currentColor"
+                />
+              </a>
+            </div>
+          </div>
+        </div> */}
       </section>
-      <section className="">
+      {/* <section className="">
         <h1 className="flex justify-center items-center text-[40px] font-bold mt-4 px-6 py-4">
           Skills
         </h1>
@@ -256,7 +441,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <section>
         <div className="my-10">
           <h2
@@ -322,7 +507,7 @@ const Landing = () => {
           </div>
         </div>
       </section> */}
-      <section className="bg-gradient-to-br from-white via-green-100 to-white">
+      {/* <section className="bg-gradient-to-br from-white via-green-100 to-white">
         <h1 className="flex justify-center items-center text-[40px] font-bold mt-4 px-6 pt-4 pb-0">
           Projects
         </h1>
@@ -356,7 +541,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <section class="text-neutral-700 w-full md:w-3/4 mx-auto px-6 py-4">
         <div class="mx-auto text-center md:max-w-xl lg:max-w-3xl">
           <h3 class="mb-6 text-3xl font-bold">Testimonials And Reviews</h3>
@@ -433,52 +618,6 @@ const Landing = () => {
           </button>
         </a>
       </section> */}
-      <section className="flex items-center justify-center px-4 py-2">
-        <div className="lg:w-1/3 md:w-1/2 bg-green-300 flex flex-col mx-auto w-full md:py-8 mt-8 md:mt-0 border border-black px-12 hover hover:bg-green-400 py-4 mb-6">
-          <h2 className="text-gray-900 text-[20px] font-serif mb-4 font-bold flex items-center justify-center">
-            Get In Touch
-          </h2>
-          <form action="https://api.web3forms.com/submit" method="POST">
-            <input
-              type="hidden"
-              name="access_key"
-              value="fd5ea484-38d0-4665-b325-0421d096a38b"
-            />
-
-            <div className="relative mb-4">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Full Names"
-                required
-                className="w-full bg-white border outline-none border-gray-600 font-serif text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-            <div className="relative mb-4">
-              <input
-                type="text"
-                id="name"
-                name="email"
-                placeholder="Email"
-                required
-                className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              />
-            </div>
-            <div className="relative font-serif mb-4">
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Message"
-                className="w-full bg-white border border-gray-600 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-              ></textarea>
-            </div>
-            <button className="text-white font-serif bg-blue-700 border-0 py-2 px-6 w-full mx-auto focus:outline-none hover:bg-blue-900 shadow-lg hover:shadow-blue-700 font-bold text-xl">
-              Send
-            </button>
-          </form>
-        </div>
-      </section>
     </>
   );
 };
