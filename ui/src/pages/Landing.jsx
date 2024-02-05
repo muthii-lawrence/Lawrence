@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Ffstar, Fstar, Netflix, Skill, Skillshare, my_image } from "../assets";
+import React, { useState, useEffect, useRef } from "react";
+import { Fstar, Netflix, my_image } from "../assets";
 import { GoProjectSymlink } from "react-icons/go";
-import { Card } from "antd";
 import Slider from "react-slick";
 import { FaListUl } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CountUp from "react-countup";
+import { Tabs, Card } from "antd";
 
 const Landing = () => {
   const settings = {
@@ -93,62 +94,125 @@ const Landing = () => {
     },
   ];
 
+  // const [isVisible, setIsVisible] = useState(false);
+  // const counterRef = useRef(null);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
+  //     const elementOffsetTop = counterRef.current.offsetTop;
+
+  //     if (scrollPosition >= elementOffsetTop - window.innerHeight / 2) {
+  //       setIsVisible(true);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+  const onChange = (key) => {
+    console.log(key);
+  };
+  const items = [
+    {
+      key: "1",
+      label: "Skills",
+      children: (
+        <>
+          <div className="flex flex-wrap mx-auto">
+            <span className="text-[18px] font-bold bg-blue-50 text-blue-600 px-4 rounded mb-4 py-1 border border-blue-500 mx-3">
+              HTML5
+            </span>
+            <span class="bg-red-50 text-red-600 font-bold mx-3 px-4 py-1 text-[18px] rounded mb-4 border border-red-600">
+              CSS5
+            </span>
+            <span class="bg-green-50 text-green-600 font-bold mx-3 px-4 py-1 text-[18px] rounded mb-4 border border-green-600">
+              React Js
+            </span>
+            {/* </div>
+          <div> */}
+            <span class="bg-yellow-50 text-yellow-600 font-bold mx-3 px-4 py-1  text-[18px] rounded mb-4 border border-yellow-500">
+              Javascript
+            </span>
+            <span class="bg-purple-50 text-purple-600 font-bold mx-3 px-4 py-1  text-[18px] rounded mb-4 border border-purple-600">
+              Git
+            </span>
+            <span class="bg-pink-50 text-pink-600 font-bold mx-3 px-4 py-1  text-[18px] rounded mb-4 border border-pink-600">
+              Testing
+            </span>
+          </div>
+          <div className="my-2">
+            <span class="bg-indigo-50 text-indigo-600 font-bold mx-3 px-4 py-2  text-[18px] rounded mb-4 border border-indigo-600">
+              Responsive Design
+            </span>
+          </div>
+        </>
+      ),
+    },
+    {
+      key: "2",
+      label: "Services",
+      children: "Content of Tab Pane 2",
+    },
+    {
+      key: "3",
+      label: "Projects",
+      children: "Content of Tab Pane 3",
+    },
+  ];
+
   return (
     <>
-      <section className="max-w-ful mt-[70px]">
-        <div className="font-poppins shadow-lg shadow-[#000] flex justify-center items-center  max-w-[98%] mx-auto">
+      <section className="max-w-full mt-20">
+        <div className="font-poppins flex justify-center items-center  max-w-[98%] mx-auto">
           <div className="py-2 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             <div className="px-6">
               <div className="space-x-8 lg:my-4">
-                <h1 className="md:text-[50px] text-[35px] font-bold font-poppins text-black ">
+                <h1 className="md:text-[45px] text-[27px] mt-10 font-bold font-poppins text-black ">
                   This is Lawrence. I'm A <br />
-                  <p className="font-mono bg-[#37b467] px-4 rounded-full w-fit lg:text-[45px] py-4 md:py-0 text-[23px] shadow-lg shadow-black text-white font-bold mt-2">
-                    Front-end Developer
+                  <p className="font-mono bg-[#37b467] px-4 rounded-full w-fit lg:text-[45px] py-2 md:py-0 text-[24px]  text-white font-bold mt-10">
+                    Software Engineer{" "}
                   </p>
                 </h1>
-                <p className="text-xl flex justify-center items-center font-sans my-6 mx-0">
-                  Design and build your website from an experienced developer.
-                  Also if you like any project to do you can contact me. Bring
-                  your dream project to live.
+                <p className="md:text-[20px] text-[17px] md:flex md:font-poppins my-6 mt-10 mx-0">
+                  Turning ideas into real life projects is my calling.
                 </p>
               </div>
-              <div className="space-x-[20%] mt-[40px] relative">
+              <div className=" my-[40px] md:ml-40 items-center justify-center md:justify-normal mx-auto flex ">
                 <button
-                  className="bg-[#55ce83] font-semibold text-white rounded-full h-11 hover:border-2 hover:border-[#50c473] hover:bg-[white] hover:text-black
-                hover:shadow-[#9ff884] hover:shadow-xl px-4"
+                  className="hover:border-[#000000] hover:text-[#353175]  h-11 border-2 border-[#000] bg-[white] text-black
+                hover:shadow-[#000] hover:shadow-sm hover:scale-125 text-[18px] font-semibold px-4"
                 >
-                  Contact Me
-                </button>
-                <button
-                  className="hover:border-[#000000] hover:rounded-none hover:text-[#353175]  h-11 border-2 border-[#61e29b] bg-[white] text-black
-                hover:shadow-[#000] hover:shadow-xl font-semibold px-4"
-                >
-                  Book a Call
+                  Reach Out
                 </button>
               </div>
-              <div className="flex space-y-0 space-x-[20%] items-baseline my-3 ">
-                <div className=" my-0 w-24">
-                  <img className="w-24" src={Skillshare} alt="" />
-                  <img src={Fstar} alt="" />
-                </div>
-                <div className="w-24">
-                  <img src={Skill} alt="" />
-                  <img src={Ffstar} alt="" />
-                </div>
+
+              <div className="mt-10">
+                <Tabs
+                  defaultActiveKey="1"
+                  items={items}
+                  onChange={onChange}
+                  className=""
+                />
               </div>
             </div>
-            <div class="flex flex-col justify-center items-center max-h-3/4 overflow-hidden relative">
-              <div class="relative">
-                <div className="bg-[#95d894] px-3 rounded-full h-11 flex items-center text-xl absolute  bottom-1/4 right-[-4rem] space-x-2">
+            <div className="flex flex-col justify-center items-center max-h-3/4 overflow-hidden relative">
+              <div className="relative">
+                <div className="bg-[#95d894] px-3 rounded-full h-11 flex items-center md:text-xl absolute  md:bottom-1/4 bottom-1/4 md:right-[-4rem] space-x-2">
                   <GoProjectSymlink className="text-white" />
-                  <p className="text-black">100+ completed projects</p>
+
+                  <p className="text-black">
+                    <CountUp end={100} />+ completed projects
+                  </p>
                 </div>
-                <div className="bg-[#abe7aa] px-3 rounded-full h-11 flex items-center text-xl absolute top-1/4 left-[-2rem] space-x-4">
+                <div className="bg-[#abe7aa] px-3 rounded-full h-11 flex items-center md:text-xl absolute md:top-1/4 top-5 md:left-[-2rem] left-0 space-x-4">
                   <FaListUl className="text-white" />
                   <p classNamme="text-black">10+ Languages</p>
                 </div>
                 <img
-                  class="w-3/4 h-full object-cover rounded-full shadow-2xl shadow-[#78c56d] mx-auto"
+                  class="w-3/4 h-full object-cover rounded-full mx-auto"
                   src={my_image}
                   alt=""
                 />
@@ -193,7 +257,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section>
+      {/* <section>
         <div className="my-10">
           <h2
             className="bg-gradient-to-b from-[#C0F1BF] to-[#ffffff flex justify-center items-center
@@ -257,7 +321,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="bg-gradient-to-br from-white via-green-100 to-white">
         <h1 className="flex justify-center items-center text-[40px] font-bold mt-4 px-6 pt-4 pb-0">
           Projects
@@ -293,7 +357,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section class="text-neutral-700 w-full md:w-3/4 mx-auto px-6 py-4">
+      {/* <section class="text-neutral-700 w-full md:w-3/4 mx-auto px-6 py-4">
         <div class="mx-auto text-center md:max-w-xl lg:max-w-3xl">
           <h3 class="mb-6 text-3xl font-bold">Testimonials And Reviews</h3>
           <p class="mb-6 pb-2 md:mb-12 md:pb-0">
@@ -368,96 +432,51 @@ const Landing = () => {
             Leave your Review
           </button>
         </a>
-      </section>
-      <section>
-        <div class="font-medium relative">
-          <div class="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap bg-white">
-            <div class="lg:w-2/3 md:w-1/2 overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative ring-1 ring-slate-900">
-              <iframe
-                width="100%"
-                height="100%"
-                class="absolute inset-0"
-                frameborder="0"
-                title="map"
-                marginheight="0"
-                marginwidth="0"
-                scrolling="no"
-                src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-                className="filter: grayscale(1) contrast(1.2) opacity(0.4);"
-              ></iframe>
-              <div className="bg-white py-6 rounded lg:h-fit lg:w-1/3 shadow-md font-poppins">
-                <div className=" h-1/2 px-6 py-6">
-                  <h2 className="text-[16px] font-semibold text-gray-900 tracking-widest">
-                    ADDRESS
-                  </h2>
-                  <p className="mt-1 text-lg text-blue-900 ">
-                    342-01000 Nairobi
-                  </p>
-                </div>
-                <div className="lg:w-1/2 px-6 mt-4 py-2 lg:mt-0">
-                  <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs">
-                    EMAIL
-                  </h2>
-                  <a className="text-blue-950 mt-1 leading-relaxed">
-                    murage.lawrence@gmail.com
-                  </a>
-                  <h2 className="text-[14px] font-bold text-gray-900 tracking-widest text-xs mt-4">
-                    PHONE
-                  </h2>
-                  <p className="text-blue-950 py-2 leading-relaxed">
-                    +254795684016
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="lg:w-1/3 md:w-1/2 bg-green-300 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 border border-black px-12 hover hover:bg-green-400 py-0
-              "
-            >
-              <h2 className="text-gray-900 text-[20px] font-serif mb-4 font-bold flex items-center justify-center">
-                Get In Touch
-              </h2>
-              <form action="https://api.web3forms.com/submit" method="POST">
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="fd5ea484-38d0-4665-b325-0421d096a38b"
-                />
+      </section> */}
+      <section className="flex items-center justify-center px-4 py-2">
+        <div className="lg:w-1/3 md:w-1/2 bg-green-300 flex flex-col mx-auto w-full md:py-8 mt-8 md:mt-0 border border-black px-12 hover hover:bg-green-400 py-4 mb-6">
+          <h2 className="text-gray-900 text-[20px] font-serif mb-4 font-bold flex items-center justify-center">
+            Get In Touch
+          </h2>
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input
+              type="hidden"
+              name="access_key"
+              value="fd5ea484-38d0-4665-b325-0421d096a38b"
+            />
 
-                <div className="relative mb-4">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Full Names"
-                    required
-                    className="w-full bg-white border outline-none border-gray-600 font-serif text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-                <div className="relative mb-4">
-                  <input
-                    type="text"
-                    id="name"
-                    name="email"
-                    placeholder="Email"
-                    required
-                    className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-                <div className="relative mb-4">
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Message"
-                    className="w-full bg-white border border-gray-600 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                  ></textarea>
-                </div>
-                <button className="text-white font-serif bg-blue-700 border-0 py-2 px-6 w-full mx-auto focus:outline-none hover:bg-blue-900 shadow-lg hover:shadow-blue-700 font-bold text-xl">
-                  Send
-                </button>
-              </form>
+            <div className="relative mb-4">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Full Names"
+                required
+                className="w-full bg-white border outline-none border-gray-600 font-serif text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
             </div>
-          </div>
+            <div className="relative mb-4">
+              <input
+                type="text"
+                id="name"
+                name="email"
+                placeholder="Email"
+                required
+                className="w-full bg-white border outline-none border-gray-600 font-serif outline-1 text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div className="relative font-serif mb-4">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                className="w-full bg-white border border-gray-600 h-32 text-base outline-none text-gray-900 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              ></textarea>
+            </div>
+            <button className="text-white font-serif bg-blue-700 border-0 py-2 px-6 w-full mx-auto focus:outline-none hover:bg-blue-900 shadow-lg hover:shadow-blue-700 font-bold text-xl">
+              Send
+            </button>
+          </form>
         </div>
       </section>
     </>

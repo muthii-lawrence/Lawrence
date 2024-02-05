@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.slick-slide > div{
-    margin: 0 20px;
+.slick-slide > div {
+  margin: 0 20px;
+}
+.custom-tab-label {
+  @apply text-blue-500 text-lg; 
 }
