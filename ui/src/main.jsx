@@ -5,7 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootPage from "./pages/Rootpage";
 import Landing from "./pages/Landing";
 import { Reviews } from "./pages/Reviews";
-import Form from "./pages/Form";
+import Articles from "./pages/Articles";
+import ArticleDetails from "./pages/ArticlesDetails";
 
 const router = createBrowserRouter([
   {
@@ -15,11 +16,17 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Landing />,
-      },
-      {
-        path: "/reachout",
-        element: <Form />,
-      },
+      },{
+      
+      path: "/articles",
+      element: <Articles />,
+    },
+    {
+      
+      path: "/article/:id",
+      element: <ArticleDetails />,
+    },
+      
     ],
   },
 ]);

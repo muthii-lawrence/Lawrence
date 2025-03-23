@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 
 export default function RootPage() {
   return (
-    <div>
+    <div className="mt-20">
       <Navbar />
       <Outlet />
       <Footer />
